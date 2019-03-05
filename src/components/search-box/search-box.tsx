@@ -39,7 +39,7 @@ export class SearchBox {
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="row">
                     <div class="col-lg-5">
-                        <input class="form-control" onInput={this.handleChange} ref={el => this.textInput = el as HTMLInputElement} onClick={this.makeEmpty} />
+                        <input placeholder="Type Your Location" class="form-control" onInput={this.handleChange} ref={el => this.textInput = el as HTMLInputElement} onClick={this.makeEmpty} />
                         <ul class="auto-complete bg-light">
                             {this.filteredPoi.map(offer => offer.translations.map(item => {
                                 return item.locale === 'en' && (
