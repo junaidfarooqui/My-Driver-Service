@@ -2,6 +2,7 @@ import { Component, Prop, State } from '@stencil/core'
 import { Store, Action } from '@stencil/redux'
 import { postRequest, saveSelectedData } from '../../actions/offers'
 import selectedData from './search-box'
+import flatpickr from "flatpickr";
 
 @Component({
   tag: 'search-box',
@@ -32,6 +33,14 @@ export class SearchBox {
     }))
   }
     private textInput?: HTMLInputElement;
+    private dateTime?: HTMLInputElement;
+
+    componentDidLoad() {
+        flatpickr(this.dateTime, {
+            enableTime: true,
+            dateFormat: "Y-m-dTH:i",
+        });
+    }
 
   render() {
     return (
@@ -80,7 +89,7 @@ export class SearchBox {
                         </select>
                     </div>
                     <div class="col-lg-3">
-                        <input class="form-control" placeholder="YYYY-MM-DDTHH:MM" type="datetime-local" onChange={this.DateChange} />
+                        <input ref={el => this.dateTime = el as HTMLInputElement} class="form-control dt-picker" onChange={this.DateChange} type="text" placeholder="Select Date.." data-id="datetime" readonly="readonly" />
                     </div>
                     <div class="col-lg-2">
                         <button class="btn btn-primary" onClick={this.search}>Search</button>

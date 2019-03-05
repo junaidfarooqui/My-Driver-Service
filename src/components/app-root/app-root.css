@@ -72,6 +72,10 @@
   display: inline-block;
 }
 
+.dt-picker {
+  background: #ffffff!important;
+}
+
 @-webkit-keyframes load8 {
   0% {
     -webkit-transform: rotate(0deg);
