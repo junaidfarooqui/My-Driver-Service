@@ -80,7 +80,7 @@ export class SearchBox {
                         </select>
                     </div>
                     <div class="col-lg-3">
-                        <input class="form-control" type="datetime-local" onChange={this.DateChange} />
+                        <input class="form-control" placeholder="YYYY-MM-DDTHH:MM" type="datetime-local" onChange={this.DateChange} />
                     </div>
                     <div class="col-lg-2">
                         <button class="btn btn-primary" onClick={this.search}>Search</button>
