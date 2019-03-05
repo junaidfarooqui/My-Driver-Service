@@ -4,7 +4,7 @@
 
 **Step 1: install project on local**
 
-Get the clone of repository or download on local. Open terminal and go into **my-driver-app** folder 
+Get the clone of repository or download on local. Open terminal and go into **My-Driver-Service** folder 
 
 **Step 2: install project on local**
 ```bash
