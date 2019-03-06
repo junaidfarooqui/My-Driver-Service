@@ -8,26 +8,32 @@ export class OffersList {
     @Prop({ context: 'store' }) store: Store
     @State() items: Array<any> = []
     @State() loading: Boolean = false
+    @State() fetchError: string
 
     componentWillLoad() {
         const { mapStateToProps } = this.store
         mapStateToProps(this, state => {
             return {
                 items: state.offers.items,
-                loading: state.offers.loading
+                loading: state.offers.loading,
+                fetchError: state.offers.fetchError,
             }
         })
     }
 
     render() {
-        const { items } = this;
-        if (this.loading) {
+        const { items, fetchError } = this;
+      if (this.loading || fetchError) {
             return (
                 <div class="container mt-lg-5 text-center">
-                    <div class="loading">.</div>
+                    {fetchError && <div class="text-danger mb-4">{fetchError}</div>}
+                    {this.loading && (
+                        <div class="loading">.</div>
+                    )}
                 </div>
             )
-        } else {
+        }
+        else {
         return (
             <div class="container mt-lg-5">
                 <div class="row">

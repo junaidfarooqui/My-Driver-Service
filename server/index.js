@@ -20,7 +20,7 @@ app.post('/api/offers', (req, res) => {
         })
         .catch(err => {
             console.log(err, 'coming to err');
-            res.status(500).json(err);
+            return res.status(500).json(err);
         })
 });
 

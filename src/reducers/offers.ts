@@ -3,17 +3,19 @@ import * as actions from '../actions/offers'
 const offersState = {
     items: [],
     selectedData: {},
-    loading: false
+    loading: false,
+    fetchError: ''
 }
 
 export default (state = offersState, action) => {
-    const { type, items } = action
+    const { type, items, error } = action
 
     switch (type) {
         case actions.SET_OFFERS:
             return {
                 ...state,
                 items,
+                fetchError: null,
             }
         case actions.SAVE_SELECTED_DATA:
             return {
@@ -26,6 +28,12 @@ export default (state = offersState, action) => {
         case actions.LOADING:
             return {
                 ...state,
+                loading: action.status
+            }
+        case actions.SET_REQUEST_ERROR:
+            return {
+                ...state,
+                fetchError: error,
                 loading: action.status
             }
         default:

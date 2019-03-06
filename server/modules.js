@@ -9,4 +9,7 @@ const apiDriver = axios.create({
 export default data =>
     apiDriver.post('offers', {
         ...data
+    }).catch(err => {
+    console.log(err, 'coming to err');
+    return res.status(500).json(err);
     });
