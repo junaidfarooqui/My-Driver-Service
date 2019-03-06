@@ -23,3 +23,5 @@ npm start
 **Disclaimer:**
 _This application built on **StencilJs** and using **Sixt Limousine service** public API. In case of any copyright violation please contact at [junaidfarooqui61@gmail.com](mailto:junaidfarooqui61@gmail.com)_ 
 
+_PS: On FireFox ES5 builds are disabled during development to take advantage of 2x faster build times. When testing browsers it is recommended to always test in production mode, and ES5 builds should always be enabled during production builds. read more about this on [StencilJS Documentation](https://stenciljs.com/docs/config/)_
+
