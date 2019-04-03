@@ -7,10 +7,7 @@ const app = express();
 
 // For cross domains
 app.use(cors());
-
-app.use(bodyParser.text());
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
 
 app.post('/api/offers', (req, res) => {
     getOffers(req.body.data)
